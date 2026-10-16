@@ -1,10 +1,12 @@
 from prometheus_fastapi_instrumentator import Instrumentator
+from sqlalchemy import text
 
-from shop_api.main import app
+from shop_api.main import DB, app
 
 
 @app.get("/health", include_in_schema=False)
-async def health() -> dict[str, str]:
+def health(db: DB) -> dict[str, str]:
+    db.execute(text("SELECT 1"))
     return {"status": "ok"}
 
 

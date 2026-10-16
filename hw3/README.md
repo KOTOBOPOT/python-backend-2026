@@ -100,4 +100,5 @@ docker compose -f hw3/docker-compose.yml -f hw3/docker-compose.render.yml --prof
 ```
 
 Данные Prometheus и настройки Grafana сохраняются в именованных Docker volumes.
-Товары и корзины хранятся в памяти магазина и сбрасываются при его перезапуске.
+После ДЗ4 товары и корзины хранятся в БД. Без дополнительного Compose-файла
+используется SQLite в volume `shop-data`; для запуска с MySQL см. [ДЗ4](../hw4/README.md).

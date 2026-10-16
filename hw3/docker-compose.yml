@@ -5,6 +5,8 @@ services:
     build:
       context: ..
       dockerfile: hw3/Dockerfile
+    volumes:
+      - shop-data:/data
     ports:
       - "127.0.0.1:8080:8000"
     healthcheck:
@@ -56,5 +58,6 @@ services:
     restart: unless-stopped
 
 volumes:
+  shop-data:
   prometheus-data:
   grafana-data:
